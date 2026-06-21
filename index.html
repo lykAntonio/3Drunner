@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="星际弹跳跑酷面试展示版，一个基于 Three.js 的 3D 程序化关卡小游戏。" />
+  <title>星际弹跳跑酷 | 面试展示版</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+<!-- 关卡选择界面 -->
+  <div id="levelSelectOverlay">
+    <div id="levelSelectContainer">
+      <div id="levelSelectTitle">选择关卡</div>
+      <div id="levelSelectSub">INTERSTELLAR</div>
+      <div id="levelCards"></div>
+      <button id="backToMenuBtn">返回菜单</button>
+    </div>
+  </div>
+
+  <!-- 游戏内返回菜单按钮 -->
+  <button id="inGameMenuBtn">菜单</button>
+  <button id="audioToggleBtn">声音</button>
+
+  <!-- 关卡目标状态 -->
+  <div id="missionUI">
+    <div id="missionMeta">
+      <span id="missionLabel">OBJECTIVE</span>
+      <span id="missionProgressText">0 / 1</span>
+    </div>
+    <div id="missionBar">
+      <div id="missionBarFill"></div>
+    </div>
+    <div id="missionTags"></div>
+  </div>
+
+  <!-- 胜利弹窗 -->
+  <div id="victoryOverlay">
+    <div id="victoryBox">
+      <div id="victoryStars">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </div>
+      <h1 id="victoryTitle">YOU WIN!</h1>
+      <p id="victoryDesc">你成功进入了黑洞！</p>
+      <p id="victoryStats"></p>
+      <div id="victoryBtns">
+        <button id="victoryNextBtn">下一关</button>
+        <button id="victoryBackBtn">返回选关</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 关卡名称闪现 -->
+  <div id="levelAnnounce">
+    <div class="level-num" id="levelNum">LEVEL 1</div>
+    <div class="level-title" id="levelTitle">永恒号</div>
+    <div class="level-sub" id="levelSub">1 次命中后开启黑洞</div>
+  </div>
+
+  <!-- 距离显示 -->
+  <div id="distanceUI">
+    <div id="levelName">永恒号</div>
+    <div id="distCurrent">0<span class="unit">m</span></div>
+    <div id="distTarget">目标: 1 次命中</div>
+    <div id="speedReadout">速度 x1.00</div>
+  </div>
+
+  <!-- 连击鼓励 -->
+  <div id="comboUI">
+    <div id="comboWord">PERFECT</div>
+    <div id="comboCount">x1</div>
+  </div>
+
+  <!-- 超空间连击奖励 -->
+  <div id="surgeUI">
+    <div id="surgeTitle">HYPERSPACE</div>
+    <div id="surgeSub">捷径 +1</div>
+  </div>
+
+  <!-- GameOver 弹窗 -->
+  <div id="gameOverOverlay">
+    <div id="gameOverBox">
+      <h1>GAME OVER</h1>
+      <p>颜色不同，球碎了...</p>
+      <div id="gameOverBtns">
+        <button id="continueBtn">复活</button>
+        <button id="backBtn">返回</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 复活倒计时 -->
+  <div id="adOverlay">
+    <div id="adBox">
+      <div id="reviveTitle">REBOOT</div>
+      <div id="reviveSub">轨道核心重启中</div>
+      <div id="adCountdown">10</div>
+    </div>
+  </div>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
