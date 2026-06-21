@@ -2,3 +2,4 @@ node_modules
 dist
 .DS_Store
 AI产品经理面试逐字稿.md
+.vercel
